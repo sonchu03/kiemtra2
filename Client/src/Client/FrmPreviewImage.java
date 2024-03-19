@@ -6,10 +6,10 @@ import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1571020223 Chu Hoàng Sơn CNTT15-04
 public class FrmPreviewImage extends javax.swing.JFrame {
 
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     private final File file;
     public FrmPreviewImage(File file) {
         this.file = file;
@@ -21,16 +21,14 @@ public class FrmPreviewImage extends javax.swing.JFrame {
         }
         initComponents();
         
-        if(iconApp.getIcon() != null){
-            this.setIconImage(((ImageIcon)iconApp.getIcon()).getImage());
-        }
+        
         
         ImageIcon icon = ImageUtils.fitImageFromFile(mainLabel, file);
         if(icon != null){
             mainLabel.setIcon(icon);
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,11 +42,8 @@ public class FrmPreviewImage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnAccept = new javax.swing.JButton();
         btnRemove = new javax.swing.JButton();
-        iconApp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        mainLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/image_template.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Preview Image");
@@ -69,8 +64,6 @@ public class FrmPreviewImage extends javax.swing.JFrame {
             }
         });
 
-        iconApp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/chat.png"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,8 +72,7 @@ public class FrmPreviewImage extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(iconApp)
-                        .addGap(38, 38, 38)
+                        .addGap(86, 86, 86)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,9 +86,8 @@ public class FrmPreviewImage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconApp)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -106,7 +97,7 @@ public class FrmPreviewImage extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,7 +116,6 @@ public class FrmPreviewImage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccept;
     private javax.swing.JButton btnRemove;
-    private javax.swing.JLabel iconApp;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel mainLabel;
     // End of variables declaration//GEN-END:variables

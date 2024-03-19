@@ -8,15 +8,15 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import javax.swing.JOptionPane;
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1572020223 CHu HOàng Sơn CNTT15-04
 public class FileDownloader implements Runnable{
     private String fileId, path;
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1572020223 CHu HOàng Sơn CNTT15-04
     public FileDownloader(String path, String fileName){
         this.fileId = fileName;
         this.path = path;
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1572020223 CHu HOàng Sơn CNTT15-04
     @Override
     public void run() {
         try {

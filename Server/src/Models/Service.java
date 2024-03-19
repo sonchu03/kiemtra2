@@ -16,28 +16,28 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1571020223 Chu Hoàng Sơn CNTT15-04
 public class Service {
     public static long delayFreeResources = 3000;
     
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public List<ClientListener> clients = new ArrayList<>();
     public List<Room> rooms = new ArrayList<>();
     public List<Attachment> attachments = new ArrayList<>();
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static String pathResources = "src/files/";
     private final static Service service = new Service();
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static Service gI(){
         return service;
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public void sendGlobalMessage(String command){
         for(ClientListener client: this.clients){
             client.sendCommand(command);
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public void removeClient(int id){
         for(ClientListener client: this.clients){
             if(client.idClient == id){
@@ -46,7 +46,7 @@ public class Service {
             }
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static class RunnableListenerCLient  implements Runnable{
         @Override
         public void run(){
@@ -64,7 +64,7 @@ public class Service {
             }
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static class RunnableServerFile implements Runnable{
         @Override
         public void run() {
@@ -109,7 +109,7 @@ public class Service {
         }
         
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static class FileDownloader implements Runnable{
         private final ClientListener client;
         private final String fileName;
@@ -122,7 +122,7 @@ public class Service {
         @Override
         public void run() {
             try {
-                URL url = new URL(String.format("http://%s:7878",client.socket.getInetAddress().getHostAddress()));
+                URL url = new URL(String.format("http://%s:7879",client.socket.getInetAddress().getHostAddress()));
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 

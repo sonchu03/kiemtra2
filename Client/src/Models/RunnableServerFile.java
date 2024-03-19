@@ -9,18 +9,18 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.file.Files;
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1571020223 CHu Hoàng Sơn CNTT15-04
 public class RunnableServerFile implements Runnable{
     private final File fileTarget; 
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 CHu Hoàng Sơn CNTT15-04
     public RunnableServerFile(File fileTarget) {
         this.fileTarget = fileTarget;
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 CHu Hoàng Sơn CNTT15-04
     @Override
     public void run() {
         try {
-            ServerSocket serverSocket = new ServerSocket(7878); 
+            ServerSocket serverSocket = new ServerSocket(7879); 
             Socket clientSocket = serverSocket.accept(); 
 
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));

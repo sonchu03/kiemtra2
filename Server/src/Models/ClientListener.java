@@ -2,7 +2,7 @@ package Models;
 
 import java.net.Socket;
 import java.io.*;
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1571020223 Chu Hoàng Sơn CNTT15-04
 public class ClientListener extends Client implements Runnable{
     private BufferedReader reader;
     private PrintWriter writer;
@@ -11,7 +11,7 @@ public class ClientListener extends Client implements Runnable{
     
     public boolean isRunning = true;
     
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public ClientListener(Socket socket){
         this.idClient = Client.currentID++;
         
@@ -49,7 +49,7 @@ public class ClientListener extends Client implements Runnable{
             }
         }).start();
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     //Handle listener
     @Override
     public void run() {
@@ -61,6 +61,7 @@ public class ClientListener extends Client implements Runnable{
                 String data = msgFromClient.split("\\-")[1];
                 handleMessage(msgFromClient, function, data);
             } catch (Exception e) {
+                e.printStackTrace();
                 Service.gI().removeClient(idClient);
                 if(this.room != null){
                     handleMessage(String.format("leave_room-%d-1",this.room.id), "leave_room", this.room.id + "");
@@ -70,7 +71,7 @@ public class ClientListener extends Client implements Runnable{
             }
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public void handleMessage(String msgFromClient, String function, String data){
         switch(function){
             case "hashKey":{
@@ -273,7 +274,7 @@ public class ClientListener extends Client implements Runnable{
             }
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public void sendCommand(String msgCommand){
         this.writer.println(msgCommand);
     }

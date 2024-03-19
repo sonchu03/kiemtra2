@@ -11,11 +11,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-//1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+//1571020223 Chu Hoàng Sơn CNTT15-04
 public class FrmDashboard extends javax.swing.JFrame {
     private final DefaultTableModel tableModel;
     private MessageListener messageListener;
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     private void connect(String namePerson){
         try {
             Socket socket = new Socket(Session.host, 8989);
@@ -35,7 +35,7 @@ public class FrmDashboard extends javax.swing.JFrame {
             
         }
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     private class MessageListener implements Runnable{
         private BufferedReader reader;
         private boolean flag = true;
@@ -144,7 +144,7 @@ public class FrmDashboard extends javax.swing.JFrame {
         }
         
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public FrmDashboard(String namePerson) {
         
         this.setLocation(300, 400);
@@ -171,7 +171,7 @@ public class FrmDashboard extends javax.swing.JFrame {
         Session.gI().sendMessage("get_all_rooms-xxx");
         this.setTitle(String.format("User %s - %s", Session.gI().personID, Session.gI().personName));
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -271,7 +271,7 @@ public class FrmDashboard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     private void btnJoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinActionPerformed
         int indexSelected = mainTable.getSelectedRow();
         if(indexSelected != -1){
@@ -279,7 +279,7 @@ public class FrmDashboard extends javax.swing.JFrame {
             Session.gI().sendMessage("join_room-"+id);
         }
     }//GEN-LAST:event_btnJoinActionPerformed
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         String nameRoom = JOptionPane.showInputDialog("Nhập tên phòng cần tạo");
         if(nameRoom == null || nameRoom.strip().equals("") || nameRoom.strip().equals("-")){
@@ -288,11 +288,11 @@ public class FrmDashboard extends javax.swing.JFrame {
         String command = String.format("create_room-%s",nameRoom.replace('-', '.'));
         Session.gI().sendMessage(command);
     }//GEN-LAST:event_btnCreateActionPerformed
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     public static void main(String[] args) {
         new FrmDashboard("").setVisible(true);
     }
-    //1571020257 - Nguyễn Ngọc Đan Trường CNTT15-04
+    //1571020223 Chu Hoàng Sơn CNTT15-04
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnJoin;
